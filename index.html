@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Moon Guardian #MR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #8a2be2;
+            margin: 0 auto 25px;
+            background: linear-gradient(45deg, #1e1e1e, #2a2a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #8a2be2;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.3);
+        }
+
+        .guardian-name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #8a2be2, #4b0082, #9400d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
+        }
+
+        .username {
+            font-size: 1.4rem;
+            color: #b19cd9;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #a9a9a9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #d8bfd8;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, #8a2be2, #4b0082);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #c0c0c0;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: rgba(30, 30, 30, 0.7);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(138, 43, 226, 0.6);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+        }
+
+        .project-icon {
+            font-size: 2.5rem;
+            color: #8a2be2;
+            margin-bottom: 20px;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #e6e6fa;
+        }
+
+        .project-description {
+            color: #a9a9a9;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            color: #8a2be2;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #b19cd9;
+        }
+
+        .project-link i {
+            margin-left: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(138, 43, 226, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8a2be2;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(138, 43, 226, 0.4);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .profile-img {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .guardian-name {
+                font-size: 2.2rem;
+            }
+            
+            .username {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .guardian-name {
+                font-size: 1.8rem;
+            }
+            
+            .profile-img {
+                width: 120px;
+                height: 120px;
+                font-size: 45px;
+            }
+            
+            .header {
+                padding: 40px 20px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-img">
+                <i class="fas fa-moon"></i>
+            </div>
+            <h1 class="guardian-name">The Moon Guardian #MR</h1>
+            <p class="username">@b8rai98</p>
+            <p class="tagline">Хранитель лунных тайн • Создатель ботов • Организатор рейдов</p>
+        </header>
+
+        <!-- About Section -->
+        <section class="section">
+            <h2 class="section-title">Обо мне</h2>
+            <div class="about-content">
+                <p>Привет! Я The Moon Guardian — создатель и организатор различных проектов в Telegram. Моя деятельность охватывает как техническую сторону (создание полезных ботов), так и организацию рейдов в чатах и каналах.</p>
+                <p>Я верю в баланс между полезностью и развлечением. С одной стороны, я создаю интеллектуальных помощников для решения повседневных задач, а с другой — организую рейды через мой канал Magnanimous Raid #MR для тех, кто ищет приключений и общения в Telegram.</p>
+                <p>Каждый мой проект отражает мою философию: быть великодушным, мудрым и всегда стремиться к новым горизонтам.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section">
+            <h2 class="section-title">Мои проекты</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="project-title">MashaAI Robot</h3>
+                    <p class="project-description">Интеллектуальный Telegram-бот с искусственным интеллектом для помощи в повседневных задачах. Бот может отвечать на вопросы, помогать с информацией и поддерживать беседу.</p>
+                    <a href="https://t.me/MashaAi_Robot" class="project-link" target="_blank">
+                        Перейти к боту <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="project-title">Magnanimous Raid #MR</h3>
+                    <p class="project-description">Мой рейд-канал, где мы организуем рейды в чатах, ботах и т.д. Присоединяйся, если хочешь стать частью активного сообщества!</p>
+                    <a href="https://t.me/MagnaRaid" class="project-link" target="_blank">
+                        Перейти к каналу <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3 class="project-title">The Moon Guardian</h3>
+                    <p class="project-description">Мой личный проект, объединяющий все мои начинания под одной крышей. Здесь я делюсь своими идеями, проектами и философией.</p>
+                    <a href="#" class="project-link">
+                        Узнать больше <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="social-links">
+                <a href="https://t.me/b8rai98" class="social-link" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 The Moon Guardian #MR</p>
+            <p>Создано с лунной энергией и великодушием</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animation for project cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            projectCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
