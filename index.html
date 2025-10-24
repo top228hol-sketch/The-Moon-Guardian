@@ -14,8 +14,8 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #fff5f7 0%, #ffe6ee 100%);
-            color: #333;
+            background: linear-gradient(135deg, #0f0f15 0%, #0a0e17 100%);
+            color: #d0d0d0;
             line-height: 1.6;
             min-height: 100vh;
             padding: 20px;
@@ -23,7 +23,7 @@
             overflow-x: hidden;
         }
         
-        /* Декоративные элементы на фоне */
+        /* Мелкие белые точки на фоне */
         body::before {
             content: "";
             position: absolute;
@@ -32,71 +32,54 @@
             width: 100%;
             height: 100%;
             background-image: 
-                /* Клубнички */
-                radial-gradient(circle at 15% 25%, #ff6b81 3px, transparent 3px),
-                radial-gradient(circle at 85% 75%, #ff6b81 3px, transparent 3px),
-                radial-gradient(circle at 45% 85%, #ff6b81 3px, transparent 3px),
-                radial-gradient(circle at 65% 15%, #ff6b81 3px, transparent 3px),
-                radial-gradient(circle at 5% 65%, #ff6b81 3px, transparent 3px),
-                radial-gradient(circle at 95% 35%, #ff6b81 3px, transparent 3px),
-                /* Сердечки */
-                radial-gradient(circle at 25% 45%, #ff9ec9 2px, transparent 2px),
-                radial-gradient(circle at 75% 55%, #ff9ec9 2px, transparent 2px),
-                radial-gradient(circle at 35% 20%, #ff9ec9 2px, transparent 2px),
-                radial-gradient(circle at 80% 80%, #ff9ec9 2px, transparent 2px),
-                /* Звездочки */
-                radial-gradient(circle at 10% 10%, #ffb6c1 1px, transparent 1px),
-                radial-gradient(circle at 90% 90%, #ffb6c1 1px, transparent 1px),
-                radial-gradient(circle at 50% 5%, #ffb6c1 1px, transparent 1px),
-                radial-gradient(circle at 50% 95%, #ffb6c1 1px, transparent 1px);
-            background-size: 150px 150px;
+                radial-gradient(circle, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+            background-size: 40px 40px;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.3;
+            opacity: 0.4;
         }
         
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(15, 15, 25, 0.85);
             backdrop-filter: blur(10px);
-            border-radius: 25px;
+            border-radius: 20px;
             padding: 50px;
-            box-shadow: 0 15px 40px rgba(255, 99, 132, 0.2);
-            border: 2px solid #ffd1dc;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #2a2a3a;
             position: relative;
             z-index: 1;
             margin-top: 40px;
             margin-bottom: 40px;
+            color: #e0e0e0;
         }
         
         .header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 30px;
-            border-bottom: 3px dashed #ff9ec9;
+            border-bottom: 2px solid #3a3a50;
         }
         
         .nickname {
-            font-size: 3.8rem;
+            font-size: 3.4rem;
             font-weight: 700;
-            background: linear-gradient(45deg, #ff6b81, #ff9ec9, #ffb6c1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #e0e0e0;
             margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(255, 158, 201, 0.3);
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         .telegram-username {
-            font-size: 1.3rem;
-            color: #ff6b81;
+            font-size: 1.2rem;
+            color: #aaa;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            font-weight: 600;
+            font-weight: 500;
         }
         
         .section {
@@ -104,31 +87,28 @@
         }
         
         .section-title {
-            font-size: 2rem;
+            font-size: 1.9rem;
             margin-bottom: 20px;
-            color: #ff6b81;
+            color: #c0c0d0;
             display: flex;
             align-items: center;
-            gap: 15px;
-            font-weight: 700;
+            gap: 12px;
+            font-weight: 600;
         }
         
         .section-title i {
-            background: linear-gradient(45deg, #ff6b81, #ff9ec9);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #8a8ab0;
         }
         
         .content {
-            background: linear-gradient(135deg, #fff0f5 0%, #ffffff 100%);
-            padding: 28px;
-            border-radius: 20px;
-            border: 2px solid #ffd1dc;
-            box-shadow: inset 0 0 10px rgba(255, 158, 201, 0.1);
+            background: rgba(10, 10, 20, 0.6);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #2a2a3a;
+            color: #c5c5d5;
         }
         
         .content p {
-            color: #5a5a5a;
             font-size: 1.1rem;
             line-height: 1.7;
         }
@@ -136,67 +116,59 @@
         .contacts {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 16px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 18px;
-            padding: 15px 25px;
-            background: linear-gradient(135deg, #fff0f5 0%, #ffffff 100%);
-            border-radius: 18px;
+            gap: 16px;
+            padding: 14px 22px;
+            background: rgba(10, 10, 20, 0.6);
+            border-radius: 14px;
             transition: all 0.3s ease;
-            border: 2px solid #ffd1dc;
+            border: 1px solid #2a2a3a;
         }
         
         .contact-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 99, 132, 0.25);
-            border-color: #ff9ec9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            border-color: #4a4a60;
         }
         
         .contact-icon {
-            font-size: 1.8rem;
-            color: #ff6b81;
-            min-width: 40px;
+            font-size: 1.6rem;
+            color: #a0a0c0;
+            min-width: 36px;
             text-align: center;
         }
         
         .contact-link {
-            color: #ff6b81;
+            color: #b0b0d0;
             text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 1.15rem;
+            font-weight: 500;
+            transition: all 0.25s ease;
         }
         
         .contact-link:hover {
-            color: #ff3a63;
+            color: #d0d0ff;
             text-decoration: underline;
-            transform: translateX(3px);
         }
         
         .footer {
             text-align: center;
             margin-top: 40px;
             padding-top: 30px;
-            border-top: 3px dashed #ff9ec9;
-            color: #ff6b81;
-            font-size: 1rem;
-            font-weight: 600;
+            border-top: 2px solid #3a3a50;
+            color: #9a9ab0;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
         
         .footer i {
-            color: #ff3a63;
-            margin-right: 8px;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            color: #b0b0d0;
+            margin-right: 6px;
         }
         
         @media (max-width: 600px) {
@@ -206,23 +178,23 @@
             }
             
             .nickname {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            .contact-icon {
                 font-size: 1.5rem;
             }
             
+            .content {
+                padding: 18px;
+            }
+            
+            .contact-icon {
+                font-size: 1.4rem;
+            }
+            
             .contact-link {
-                font-size: 1.1rem;
+                font-size: 1.05rem;
             }
         }
     </style>
@@ -277,4 +249,4 @@
         </div>
     </div>
 </body>
-</html>
+    </html>
